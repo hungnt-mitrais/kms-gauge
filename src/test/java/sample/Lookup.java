@@ -1,3 +1,4 @@
+package sample;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -21,6 +22,7 @@ public class Lookup {
 		WebDriver driver = Driver.webDriver; 
 		driver.switchTo().defaultContent();
 		
+		//click on Menu
 		driver.switchTo().frame(driver.findElement(By.id("menuFrame"))); 
 		driver.findElement(By.id("tdmainMenum_1")).click();
 		driver.switchTo().defaultContent();
@@ -28,11 +30,9 @@ public class Lookup {
 		
 		
 		driver.switchTo().frame(driver.findElement(By.name("mainFrame"))); 
-		
 		//Wait for frame elements to be loaded !
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated((By.name("LookupDetailForm"))));
-//		WebElement form = driver.findElement(By.name("LookupDetailForm"));
 
 		
 		driver.findElement(By.name("tableType")).sendKeys(type);
@@ -47,7 +47,6 @@ public class Lookup {
 	 
 		//check by counting result
 		int rowCount = driver.findElements(By.xpath("//table[contains(@class, 'resultstable')]/tbody/tr")).size();
-//		JOptionPane.showMessageDialog(null, rowCount);
 		assertTrue(rowCount > 2);
 		
 		//check by paging info
