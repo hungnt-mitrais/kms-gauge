@@ -37,7 +37,8 @@ public class Lookup {
 		
 		driver.findElement(By.name("tableType")).sendKeys(type);
 		Select dropdown = new Select(driver.findElement(By.name("searchMet")));
-		dropdown.selectByVisibleText(method);
+//		dropdown.selectByVisibleText(method);
+		dropdown.selectByValue(method);
 		
 		 
 		driver.findElement(By.name("act")).click();

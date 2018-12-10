@@ -33,11 +33,10 @@ public class Login {
 
 		driver.findElement(By.name("login")).click();
 		
+
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame(driver.findElement(By.name("bottomFrame")));
-		By logoutLink = By.linkText("Logout");
-		WebElement logout = driver.findElement(logoutLink);
+		WebElement logout = driver.findElement(By.cssSelector("a[href*='logout.do']"));
 		assertTrue(logout.isDisplayed());
-		
 	}
 }

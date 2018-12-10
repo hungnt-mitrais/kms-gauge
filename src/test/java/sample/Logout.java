@@ -13,14 +13,12 @@ import utils.driver.Driver;
 public class Logout {
 	@Step("Logout")
 	public void Logout() {
-		WebDriver driver = Driver.webDriver; 
+		WebDriver driver = Driver.webDriver;  
+
 		driver.switchTo().defaultContent();
-		
 		driver.switchTo().frame(driver.findElement(By.name("bottomFrame")));
-		By logoutLink = By.linkText("Logout");
-		WebElement logout = driver.findElement(logoutLink);
+		WebElement logout = driver.findElement(By.cssSelector("a[href*='logout.do']"));
 		assertTrue(logout.isDisplayed());
-		
 		logout.click();
 	}
 }

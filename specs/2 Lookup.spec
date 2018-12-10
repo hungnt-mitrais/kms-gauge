@@ -9,5 +9,5 @@ tags: lookup
 
 * Go to the kms website
 * Login as "all" and "password"
-* Lookup method "Start With" and type "SECTION"
+* Lookup method "SWT" and type "SECTION"
 * Logout
